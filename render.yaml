@@ -6,9 +6,9 @@ services:
     startCommand: "java -jar build/libs/musicbot-0.0.1-SNAPSHOT.jar"
     envVars:
       - key: JAVA_VERSION
-        value: 17
+        value: "17"
 
-  - type: static
+  - type: web
     name: musicbot-frontend
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: "./frontend/dist"
