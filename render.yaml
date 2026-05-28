@@ -1,7 +1,6 @@
 services:
   - type: web
     name: musicbot-backend
-    runtime: java
     buildCommand: "./gradlew clean build"
     startCommand: "java -jar build/libs/musicbot-0.0.1-SNAPSHOT.jar"
     envVars:
@@ -10,6 +9,5 @@ services:
 
   - type: web
     name: musicbot-frontend
-    runtime: node
     buildCommand: "cd frontend && npm install && npm run build"
-    startCommand: "cd frontend && npx serve -s dist"
+    startCommand: "npx serve -s frontend/dist"
