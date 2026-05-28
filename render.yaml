@@ -8,7 +8,8 @@ services:
       - key: JAVA_VERSION
         value: "17"
 
-  - type: static
+  - type: web
     name: musicbot-frontend
+    runtime: node
     buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: "./frontend/dist"
+    startCommand: "cd frontend && npx serve -s dist"
